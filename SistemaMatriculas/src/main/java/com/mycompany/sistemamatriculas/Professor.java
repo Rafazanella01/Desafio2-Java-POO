@@ -9,42 +9,50 @@ public class Professor extends Pessoa {
     private String titulacao;
     private float valorHora;
     
-    public Professor(int matricula, String nome, String endereco, String titulacao, float valorHora) {
+    public Professor(int matricula, String nome, String endereco, String titulacao, float valorHora)
+    {
         super(nome, matricula, endereco);
         this.titulacao = titulacao;
         this.valorHora = valorHora;
     }
     
     // Construtor sobrecarregado
-    public Professor(int matricula, String nome, String endereco) {
+    public Professor(int matricula, String nome, String endereco)
+    {
         super(nome, matricula, endereco);
-        this.titulacao = "";
-        this.valorHora = 0.0f;
+        this.titulacao = "Doutorado";
+        this.valorHora = 100;
     }
     
     // Métodos getters e setters
-    public String getTitulacao() {
+    public String getTitulacao()
+    {
         return titulacao;
     }
 
-    public void setTitulacao(String titulacao) {
+    public void setTitulacao(String titulacao)
+    {
         this.titulacao = titulacao;
     }
 
-    public float getValorHora() {
+    public float getValorHora()
+    {
         return valorHora;
     }
 
-    public void setValorHora(float valorHora) {
+    public void setValorHora(float valorHora)
+    {
         this.valorHora = valorHora;
     }
     
-    public float calcularSalario(int horasTrabalhadas) {
+    public float calcularSalario(int horasTrabalhadas)
+    {
         return valorHora * horasTrabalhadas;
     }
     
     // Método para exibir informações do professor
-    public void exibirInformacoes() {
+    public void exibirInformacoes()
+    {
         System.out.println("Matrícula: " + getMatricula());
         System.out.println("Nome: " + getNome());
         System.out.println("Endereço: " + getEndereco());
