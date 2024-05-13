@@ -45,5 +45,14 @@ public class Disciplina {
     public void setEmenta(String ementa)
     {
         this.ementa = ementa;
-    }  
+    }
+    
+    public String toString()
+    {
+    return "Disciplina{" +
+            "codigo=" + codigo +
+            ", nome='" + nome + '\'' +
+            ", ementa='" + ementa + '\'' +
+            '}';
+    }
 }
