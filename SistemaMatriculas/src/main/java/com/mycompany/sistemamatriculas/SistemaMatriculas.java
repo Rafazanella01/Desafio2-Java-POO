@@ -20,7 +20,8 @@ public class SistemaMatriculas {
         matriculas = new ArrayList<>();
     }
 
-    public void exibirMenu() {
+    public void exibirMenu()
+    {
         Scanner scanner = new Scanner(System.in);
         int opcao;
 
@@ -31,7 +32,7 @@ public class SistemaMatriculas {
             System.out.println("3. Manutencao de horario");
             System.out.println("4. Manutencao de matriculas");
             System.out.println("5. Exibir horario");
-            System.out.println("6. Exibir matrícula do estudante");
+            System.out.println("6. Exibir matricula do estudante");
             System.out.println("7. Exibir disciplinas por professor/tutor");
             System.out.println("8. Sair");
             System.out.print("Escolha uma opcao: ");
@@ -64,12 +65,13 @@ public class SistemaMatriculas {
                     System.out.println("Saindo do sistema...");
                     break;
                 default:
-                    System.out.println("Opção invalida. Tente novamente.");
+                    System.out.println("Opcao invalida. Tente novamente.");
             }
         } while (opcao != 8);
     }
 
-    private void manutencaoPessoas(Scanner scanner) {
+    private void manutencaoPessoas(Scanner scanner)
+    {
         System.out.println("\nManutencao de Pessoas:");
         System.out.println("1. Adicionar Pessoa");
         System.out.println("2. Listar Pessoas");
@@ -89,11 +91,12 @@ public class SistemaMatriculas {
                 removerPessoa(scanner);
                 break;
             default:
-                System.out.println("Opção invalida. Tente novamente.");
+                System.out.println("Opcao invalida. Tente novamente.");
         }
     }
 
-    private void adicionarPessoa(Scanner scanner) {
+    private void adicionarPessoa(Scanner scanner)
+    {
         System.out.println("\nAdicionar Pessoa:");
         System.out.println("1. Estudante");
         System.out.println("2. Professor");
@@ -120,7 +123,7 @@ public class SistemaMatriculas {
                 pessoas.add(new Estudante(nome, matricula, endereco, curso, anoIngresso));
                 break;
             case 2:
-                System.out.print("Titulação: ");
+                System.out.print("Titulacao: ");
                 String titulacao = scanner.nextLine();
                 System.out.print("Valor Hora: ");
                 float valorHora = scanner.nextFloat();
@@ -128,9 +131,9 @@ public class SistemaMatriculas {
                 pessoas.add(new Professor(matricula, nome, endereco, titulacao, valorHora));
                 break;
             case 3:
-                System.out.print("Área de Formação: ");
+                System.out.print("Area de Formacao: ");
                 String areaFormacao = scanner.nextLine();
-                System.out.print("Salário Mensal: ");
+                System.out.print("Salario Mensal: ");
                 float salarioMensal = scanner.nextFloat();
                 scanner.nextLine(); // Consome a nova linha
                 pessoas.add(new Tutor(matricula, nome, endereco, areaFormacao, salarioMensal));
@@ -140,14 +143,16 @@ public class SistemaMatriculas {
         }
     }
 
-    private void listarPessoas() {
+    private void listarPessoas()
+    {
         System.out.println("\nLista de Pessoas:");
         for (Pessoa pessoa : pessoas) {
             System.out.println(pessoa);
         }
     }
 
-    private void removerPessoa(Scanner scanner) {
+    private void removerPessoa(Scanner scanner)
+    {
         System.out.print("Informe a matricula da pessoa a ser removida: ");
         int matricula = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -162,11 +167,12 @@ public class SistemaMatriculas {
             pessoas.remove(pessoaRemover);
             System.out.println("Pessoa removida com sucesso.");
         } else {
-            System.out.println("Pessoa não encontrada.");
+            System.out.println("Pessoa nao encontrada.");
         }
     }
 
-    private void manutencaoDisciplinas(Scanner scanner) {
+    private void manutencaoDisciplinas(Scanner scanner)
+    {
         System.out.println("\nManutencao de Disciplinas:");
         System.out.println("1. Adicionar Disciplina");
         System.out.println("2. Listar Disciplinas");
@@ -186,11 +192,12 @@ public class SistemaMatriculas {
                 removerDisciplina(scanner);
                 break;
             default:
-                System.out.println("Opção invalida. Tente novamente.");
+                System.out.println("Opcao invalida. Tente novamente.");
         }
     }
 
-    private void adicionarDisciplina(Scanner scanner) {
+    private void adicionarDisciplina(Scanner scanner)
+    {
         System.out.println("\nAdicionar Disciplina:");
         System.out.println("1. Disciplina Presencial");
         System.out.println("2. Disciplina EAD");
@@ -224,14 +231,16 @@ public class SistemaMatriculas {
         }
     }
 
-    private void listarDisciplinas() {
+    private void listarDisciplinas()
+    {
         System.out.println("\nLista de Disciplinas:");
         for (Disciplina disciplina : disciplinas) {
             System.out.println(disciplina);
         }
     }
 
-    private void removerDisciplina(Scanner scanner) {
+    private void removerDisciplina(Scanner scanner)
+    {
         System.out.print("Informe o codigo da disciplina a ser removida: ");
         int codigo = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -246,11 +255,12 @@ public class SistemaMatriculas {
             disciplinas.remove(disciplinaRemover);
             System.out.println("Disciplina removida com sucesso.");
         } else {
-            System.out.println("Disciplina não encontrada.");
+            System.out.println("Disciplina nao encontrada.");
         }
     }
 
-    private void manutencaoHorario(Scanner scanner) {
+    private void manutencaoHorario(Scanner scanner)
+    {
         System.out.println("\nManutencao de Horario:");
         System.out.println("1. Adicionar Horario");
         System.out.println("2. Listar Horarios");
@@ -270,11 +280,12 @@ public class SistemaMatriculas {
                 removerHorario(scanner);
                 break;
             default:
-                System.out.println("Opção invalida. Tente novamente.");
+                System.out.println("Opcao invalida. Tente novamente.");
         }
     }
 
-    private void adicionarHorario(Scanner scanner) {
+    private void adicionarHorario(Scanner scanner)
+    {
         System.out.println("\nAdicionar Horario:");
         System.out.print("Codigo da Disciplina: ");
         int codigoDisciplina = scanner.nextInt();
@@ -287,7 +298,7 @@ public class SistemaMatriculas {
             }
         }
         if (disciplina == null) {
-            System.out.println("Disciplina não encontrada.");
+            System.out.println("Disciplina nao encontrada.");
             return;
         }
 
@@ -302,7 +313,7 @@ public class SistemaMatriculas {
             }
         }
         if (professor == null) {
-            System.out.println("Professor não encontrado.");
+            System.out.println("Professor nao encontrado.");
             return;
         }
 
@@ -337,14 +348,16 @@ public class SistemaMatriculas {
         }
     }
 
-    private void listarHorarios() {
+    private void listarHorarios()
+    {
         System.out.println("\nLista de Horarios:");
         for (Horario horario : horarios) {
             System.out.println(horario);
         }
     }
 
-    private void removerHorario(Scanner scanner) {
+    private void removerHorario(Scanner scanner)
+    {
         System.out.print("Informe o codigo da disciplina do horario a ser removido: ");
         int codigoDisciplina = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -359,11 +372,12 @@ public class SistemaMatriculas {
             horarios.remove(horarioRemover);
             System.out.println("Horario removido com sucesso.");
         } else {
-            System.out.println("Horario não encontrado.");
+            System.out.println("Horario nao encontrado.");
         }
     }
 
-    private void manutencaoMatriculas(Scanner scanner) {
+    private void manutencaoMatriculas(Scanner scanner)
+    {
         System.out.println("\nManutencao de Matriculas:");
         System.out.println("1. Adicionar Matricula");
         System.out.println("2. Listar Matriculas");
@@ -383,11 +397,12 @@ public class SistemaMatriculas {
                 removerMatricula(scanner);
                 break;
             default:
-                System.out.println("Opção invalida. Tente novamente.");
+                System.out.println("Opcao invalida. Tente novamente.");
         }
     }
 
-    private void adicionarMatricula(Scanner scanner) {
+    private void adicionarMatricula(Scanner scanner)
+    {
         System.out.print("Matricula do Estudante: ");
         int matriculaEstudante = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -399,7 +414,7 @@ public class SistemaMatriculas {
             }
         }
         if (estudante == null) {
-            System.out.println("Estudante não encontrado.");
+            System.out.println("Estudante nao encontrado.");
             return;
         }
 
@@ -414,7 +429,7 @@ public class SistemaMatriculas {
             }
         }
         if (horario == null) {
-            System.out.println("Horario não encontrado.");
+            System.out.println("Horario nao encontrado.");
             return;
         }
 
@@ -422,18 +437,20 @@ public class SistemaMatriculas {
             matriculas.add(new Matricula(estudante, horario));
             System.out.println("Matricula realizada com sucesso.");
         } else {
-            System.out.println("Não há vagas disponíveis.");
+            System.out.println("Nao ha vagas disponiveis.");
         }
     }
 
-    private void listarMatriculas() {
+    private void listarMatriculas()
+    {
         System.out.println("\nLista de Matriculas:");
         for (Matricula matricula : matriculas) {
             System.out.println(matricula);
         }
     }
 
-    private void removerMatricula(Scanner scanner) {
+    private void removerMatricula(Scanner scanner)
+    {
         System.out.print("Matricula do Estudante: ");
         int matriculaEstudante = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -454,15 +471,18 @@ public class SistemaMatriculas {
             matriculaRemover.getHorario().getEstudantesMatriculados().remove(matriculaRemover.getEstudante());
             System.out.println("Matricula removida com sucesso.");
         } else {
-            System.out.println("Matricula não encontrada.");
+            System.out.println("Matricula na2"
+                    + "o encontrada.");
         }
     }
 
-    private void exibirHorario() {
+    private void exibirHorario()
+    {
         listarHorarios();
     }
 
-    private void exibirMatriculaEstudante(Scanner scanner) {
+    private void exibirMatriculaEstudante(Scanner scanner)
+    {
         System.out.print("Matricula do Estudante: ");
         int matriculaEstudante = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -475,7 +495,8 @@ public class SistemaMatriculas {
         }
     }
 
-    private void exibirDisciplinasPorProfessorTutor(Scanner scanner) {
+    private void exibirDisciplinasPorProfessorTutor(Scanner scanner)
+    {
         System.out.print("Matricula do Professor/Tutor: ");
         int matricula = scanner.nextInt();
         scanner.nextLine(); // Consome a nova linha
@@ -489,7 +510,8 @@ public class SistemaMatriculas {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         SistemaMatriculas sistema = new SistemaMatriculas();
         sistema.exibirMenu();
     }

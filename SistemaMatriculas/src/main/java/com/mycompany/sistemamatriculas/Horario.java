@@ -12,7 +12,8 @@ public class Horario {
     private int numeroVagas;
     private List<Estudante> estudantesMatriculados;
 
-    public Horario(Disciplina disciplina, Professor professor, String diaSemana, String turno, int numeroVagas) {
+    public Horario(Disciplina disciplina, Professor professor, String diaSemana, String turno, int numeroVagas)
+    {
         this.disciplina = disciplina;
         this.professor = professor;
         this.diaSemana = diaSemana;
@@ -21,7 +22,8 @@ public class Horario {
         this.estudantesMatriculados = new ArrayList<>();
     }
 
-    public Horario(DisciplinaEad disciplina, Professor professor, Tutor tutor, int numeroVagas) {
+    public Horario(DisciplinaEad disciplina, Professor professor, Tutor tutor, int numeroVagas)
+    {
         this.disciplina = disciplina;
         this.professor = professor;
         this.tutor = tutor;
@@ -29,38 +31,60 @@ public class Horario {
         this.estudantesMatriculados = new ArrayList<>();
     }
 
-    public Disciplina getDisciplina() {
+    public Disciplina getDisciplina()
+    {
         return disciplina;
     }
 
-    public Professor getProfessor() {
+    public Professor getProfessor()
+    {
         return professor;
     }
 
-    public Tutor getTutor() {
+    public Tutor getTutor()
+    {
         return tutor;
     }
 
-    public String getDiaSemana() {
+    public String getDiaSemana()
+    {
         return diaSemana;
     }
 
-    public String getTurno() {
+    public String getTurno()
+    {
         return turno;
     }
 
-    public int getNumeroVagas() {
+    public int getNumeroVagas()
+    {
         return numeroVagas;
     }
 
-    public List<Estudante> getEstudantesMatriculados() {
+    public List<Estudante> getEstudantesMatriculados()
+    {
         return estudantesMatriculados;
     }
 
-    public boolean adicionarEstudante(Estudante estudante) {
+    public boolean adicionarEstudante(Estudante estudante)
+    {
         if (estudantesMatriculados.size() < numeroVagas) {
             return estudantesMatriculados.add(estudante);
         }
         return false;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Horario{" +
+                "disciplina=" + disciplina +
+                ", professor=" + professor +
+                (tutor != null ? ", tutor=" + tutor : "") +
+                (diaSemana != null ? ", diaSemana='" + diaSemana + '\'' : "") +
+                (turno != null ? ", turno='" + turno + '\'' : "") +
+                ", numeroVagas=" + numeroVagas +
+                ", estudantesMatriculados=" + estudantesMatriculados +
+                '}';
     }
 }
